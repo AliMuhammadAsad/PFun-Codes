@@ -127,3 +127,15 @@ def check_types(lst,):
         return remove_duplicates(t_l)
         
 -------------------------------------------------------------------------------------------------------------------
+
+#Qns 11 - Pattern, 1, 2 1, 4 2 1, 8 4 2 1, 16 8 4 2 1 is tarha ka pattern in new lines, decreasing by multiples of 2
+n = int(input())
+def pattern(n):
+    for x in range(1, n+1):
+        for y in range(x-1, -1, -1):
+            print(2**y, end = " ")
+        print()
+        
+-------------------------------------------------------------------------------------------------------------------
+
+#Qns 12 - Pattern; 1, 1 2 1, 1 2 4 2 1, 1 2 4 8 4 2 1, 1 2 4 8 16 8 4 2 1, is tarha increasing and decreasing in multiples of 2 in new lines.
