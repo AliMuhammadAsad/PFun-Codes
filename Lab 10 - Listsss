@@ -86,7 +86,25 @@ def compute_my_bill(lst):
 -------------------------------------------------------------------------------------------------------------------
 
 #Qns 9 - Count Char  - counts the frequency of a chracter in a list
-
+def count_char(st):
+    n_lst = []
+    f_lst = []
+    if type(st) != str:
+        return("Error: bad argument. Function 'count_char' only accepts strings.")
+    else:
+        st = st.lower()
+        for x in st:
+            temp_lst = []
+            temp_lst.append(x)
+            # temp_lst.append(st.count(x))
+            temp_lst.append(sum(char == x for char in st))
+            n_lst.append(temp_lst)
+        for y in n_lst:
+            if y in f_lst:
+                pass
+            else:
+                f_lst.append(y)
+        return f_lst
 
 -------------------------------------------------------------------------------------------------------------------
 
