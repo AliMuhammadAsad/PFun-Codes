@@ -1,0 +1,42 @@
+#Qns 1 - Dude Where's My Chair? - Takes a form of crossword with a new line shown by '\n' and returns nested lists, each list contains a letter, its position as row and column
+def crossword_positions(puzzle):
+    lst, rows, column = [], 0, 0
+    for x in puzzle:
+        if x == '\n':
+            rows += 1
+            column = 0
+        else:
+            temp_lst = []
+            temp_lst.append(x), temp_lst.append(rows), temp_lst.append(column)
+            lst.append(temp_lst)
+            column += 1
+    return lst
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Qns 2 - Anagrams - takes 2 strings and checks whether they are anagrams or not without using sorted function
+def listing(word): #makes a list containing each element in the string to compare with the other one
+    lst = []
+    for x in word:
+        lst.append(x)
+    return lst
+def remove_spaces(lst): #removes the spaces from previously created list to only get the letters
+    if ' ' in lst:
+        lst.remove(' ')
+        remove_spaces(lst)
+    else:
+        return lst
+
+def are_anagrams(word1, word2):
+    word1, word2 = word1.lower(), word2.lower()
+    lst1, lst2 = listing(word1), listing(word2)
+    remove_spaces(lst1), remove_spaces(lst2)
+    lst1.sort(),lst2.sort()
+    if lst1 == lst2:
+        return True
+    else:
+        return False
+        
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Qns 3 - 
