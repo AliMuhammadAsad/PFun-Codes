@@ -85,4 +85,21 @@ def partition_modulo_three(t):
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Qns 6 - Transmogrification Spell
+#Qns 6 - Transmogrification Spell - has no paramters but takes an integer(denotes no. letters) then that many inputs with spaces so that a letter translates to 
+                                    another letter for eg, "a g" a translates to g, then inputs a word and returns the translated word.
+def transmogrify():
+    n, count, t_from, t_to = int(input()), 0, [],  []
+    while count < n:
+        s = input()
+        t_from.append(s[0]), t_to.append(s[2])
+        count += 1
+    word = input()
+    d = {}
+    for x in range(len(t_from)):
+        temp_d = {t_from[x]:t_to[x]}
+        d.update(temp_d)
+    string = str()
+    for x in word:
+        val = d.get(x)
+        string = string + val    
+    return string
