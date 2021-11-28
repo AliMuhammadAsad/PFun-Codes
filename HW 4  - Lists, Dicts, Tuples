@@ -39,4 +39,50 @@ def are_anagrams(word1, word2):
         
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#Qns 3 - 
+#Qns 3 - The Power of a Set - takes a list L and returns all of its sub sets
+def genPower(L):
+    # sets = [[]]
+    # for x in L:
+    #     for y in sets:
+    #         sets = sets +  [list(y) + [x]]
+    #         # sets.append(list(y) + [x])
+    # return sets
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Qns 4 - NestedList2Dictionary - takes nested lists and returns a dictionary with first value of sublist as key and remaining as values - handles same keys
+def nestedList2Dictionary(L):
+    d = {}
+    for x in range(len(L)):
+        k, vals = L[x][0], [L[x][1], L[x][2]]
+        if k in d:
+            # return("key exists")
+            val = d.get(k)
+            for x in vals:
+                val.append(x)
+            temp_d = {k: val}
+            d.update(temp_d) 
+        else:
+            temp_d = {k: vals}
+            d.update(temp_d)
+    return d
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Qns 5 - Partition Modulo 3 - takes a list of integers and returns a dictionary that partitions the integers according to remainders of 3 with remainders as keys
+def partition_modulo_three(t):
+    k = [0, 1, 2]
+    l0, l1, l2 = [],[],[]
+    for x in t:
+        if x % 3 == 0:
+            l0.append(x)
+        elif x % 3 == 1:
+            l1.append(x)
+        elif x % 3 == 2:
+            l2.append(x)
+    d = {k[0]: l0, k[1]: l1, k[2]: l2}
+    return d
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Qns 6 - Transmogrification Spell
