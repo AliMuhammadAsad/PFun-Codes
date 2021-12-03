@@ -38,12 +38,43 @@ def merge_key(d1,d2):
         #d[k] = list(d[k] for d in d_lst)
     #return d
     
+    d = {}
+    for k in d1.keys():
+        vals, temp_d = [], {}
+        if k in d2:
+            val1, val2 = d1.get(k), d2.get(k)
+            vals.append(val1), vals.append(val2)
+            temp_d = {k: vals}
+            d.update(temp_d)
+        else:
+            pass
+    return d
+    
 print(sorted(merge_key(d1,d2).items()))
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 #Qns 5 - Merge by Values
 
+def key_value_swapper(d):
+    n_d = {}
+    for k,v in d.items():
+        n_d[v]=k
+    return n_d
+
+def merge_value(d1, d2):
+    d1, d2 = key_value_swapper(d1), key_value_swapper(d2)
+    d = {}
+    for k in d1.keys():
+        vals, temp_d = [], {}
+        if k in d2:
+            val1, val2 = d1.get(k), d2.get(k)
+            vals.append(val1), vals.append(val2)
+            temp_d = {k: vals}
+            d.update(temp_d)
+        else:
+            pass
+    return d
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
